@@ -1,4 +1,6 @@
 import express from 'express';
+import {estimateCost, Medication} from './cost_estimation/estimator';
+
 const app = express();
 const port = 3000;
 
@@ -11,3 +13,5 @@ app.listen(port, () => {
 });
 
 app.use(express.static(`res`));
+
+console.log(estimateCost(40.448819, -79.953920, Medication.SPIRO));

@@ -18,5 +18,8 @@
   "homepage": "https://github.com/ARKUniversityComputing/TransHealthcareProject#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3"
   }
 }

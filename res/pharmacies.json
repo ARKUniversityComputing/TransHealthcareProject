@@ -1,0 +1,14 @@
+[
+    {
+        "name": "InHousePharmacy",
+        "latitude": 15.3767,
+        "longitude": 166.9592,
+        "prices": {
+            "ESTRADIOL_INJECTIONS": 95.00,
+            "PROGESTERONE_CAPSULES": -1,
+            "SPIRO": 1.97,
+            "TESTOSTERONE_INJECTIONS": -1
+        },
+        "url": "https://www.inhousepharmacy.vu/"
+    }
+]
