@@ -12,6 +12,8 @@ export function estimateCost(latitude: number, longitude: number, med: Medicatio
     let rawdata = fs.readFileSync('res/pharmacies.json');
     let pharmacies: object = JSON.parse(rawdata.toString());
 
+    console.log(med);
+
     let costs: {[key: string]: number} = {};
 
     for (let pharmacyDataI in pharmacies) {
@@ -19,7 +21,6 @@ export function estimateCost(latitude: number, longitude: number, med: Medicatio
         if (pharmacyData.prices[med] < 0) {
             continue;
         }
-
 
         let distance = calcCrow(latitude, longitude, pharmacyData.latitude, pharmacyData.longitude);
         let shippingCost = 0.001 * distance;

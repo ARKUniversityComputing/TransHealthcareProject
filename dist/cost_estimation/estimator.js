@@ -16,10 +16,10 @@ const fs_1 = __importDefault(require("fs"));
 function estimateCost(latitude, longitude, med) {
     let rawdata = fs_1.default.readFileSync('res/pharmacies.json');
     let pharmacies = JSON.parse(rawdata.toString());
+    console.log(med);
     let costs = {};
     for (let pharmacyDataI in pharmacies) {
         let pharmacyData = pharmacies[pharmacyDataI];
-        console.log(pharmacyData);
         if (pharmacyData.prices[med] < 0) {
             continue;
         }

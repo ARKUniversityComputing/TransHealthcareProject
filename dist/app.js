@@ -27,9 +27,9 @@ const port = 3000;
 app.set('view engine', 'ejs');
 app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.get('/estimate', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    if (req.query.address) {
+    if (req.query.address && req.query.medication) {
         const coords = yield geocoder.geocode(req.query.address);
-        const pharmData = (0, estimator_1.estimateCost)(coords[0].latitude, coords[0].longitude, estimator_1.Medication.ESTRADIOL_INJECTIONS);
+        const pharmData = (0, estimator_1.estimateCost)(coords[0].latitude, coords[0].longitude, req.query.medication);
         res.render('pharmacy', { pharmData: pharmData });
     }
     else {
