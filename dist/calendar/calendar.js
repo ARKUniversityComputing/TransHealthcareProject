@@ -2,6 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.exampleCal = exports.Calendar = exports.CalendarEvent = void 0;
 const ical_generator_1 = require("ical-generator");
+// in case we want to add filtering, add more if necessary
+var EventType;
+(function (EventType) {
+    EventType["Appointment"] = "Appointment";
+    EventType["Dose"] = "Dose";
+    EventType["Effect"] = "Effect";
+})(EventType || (EventType = {}));
+;
 /**
  * class for storing information about calendar events, with fields not included in the ical format,
  * time stored in UTC
@@ -32,13 +40,13 @@ class CalendarEvent {
     toBgColor() {
         let color;
         switch (this.type) {
-            case "Effect":
+            case EventType.Effect:
                 color = "#87e89c";
                 break;
-            case "Dose":
+            case EventType.Dose:
                 color = "#5da5d9";
                 break;
-            case "Appointment":
+            case EventType.Appointment:
                 color = "#a494eb";
                 break;
             default:
@@ -86,10 +94,10 @@ function dateToTimezone(date, timeZoneName) {
 }
 function exampleCal() {
     let cal = new Calendar();
-    cal.addEvent(new CalendarEvent("test event 1", "event to make sure this thing works", "Appointment", new Date("October 22, 2022, 11:00:00"), new Date("October 22, 2022, 16:00:00")));
-    cal.addEvent(new CalendarEvent("test event 2", "event to make sure this thing works", "Dose", new Date("October 22, 2022, 09:00:00"), new Date("October 22, 2022, 10:00:00")));
-    cal.addEvent(new CalendarEvent("test event 3", "all day events?", "Appointment", new Date("October 20, 2022")));
-    cal.addEvent(new CalendarEvent("test event 4", "really long event", "Effect", new Date("October 21, 2022"), new Date("October 22, 2023")));
+    cal.addEvent(new CalendarEvent("test event 1", "event to make sure this thing works", EventType.Appointment, new Date("October 22, 2022, 11:00:00"), new Date("October 22, 2022, 16:00:00")));
+    cal.addEvent(new CalendarEvent("test event 2", "event to make sure this thing works", EventType.Dose, new Date("October 22, 2022, 09:00:00"), new Date("October 22, 2022, 10:00:00")));
+    cal.addEvent(new CalendarEvent("test event 3", "all day events?", EventType.Appointment, new Date("October 20, 2022")));
+    cal.addEvent(new CalendarEvent("test event 4", "really long event", EventType.Effect, new Date("October 21, 2022"), new Date("October 22, 2023")));
     return cal;
 }
 exports.exampleCal = exampleCal;

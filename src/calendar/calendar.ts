@@ -1,7 +1,11 @@
 import { ICalCalendar, ICalEventData } from "ical-generator";
 
 // in case we want to add filtering, add more if necessary
-type EventType = "Effect" | "Appointment" | "Dose";
+enum EventType {
+    Appointment = "Appointment",
+    Dose = "Dose",
+    Effect = "Effect",
+};
 
 /**
  * class for storing information about calendar events, with fields not included in the ical format,
@@ -44,13 +48,13 @@ export class CalendarEvent {
     toBgColor(): string {
         let color;
         switch (this.type) {
-            case "Effect":
+            case EventType.Effect:
                 color = "#87e89c"
                 break;
-            case "Dose":
+            case EventType.Dose:
                 color = "#5da5d9"
                 break;
-            case "Appointment":
+            case EventType.Appointment:
                 color = "#a494eb"
                 break;
             default:
@@ -106,7 +110,7 @@ export function exampleCal(): Calendar {
     cal.addEvent(new CalendarEvent(
         "test event 1",
         "event to make sure this thing works",
-        "Appointment",
+        EventType.Appointment,
         new Date("October 22, 2022, 11:00:00"),
         new Date("October 22, 2022, 16:00:00"),
     ));
@@ -114,7 +118,7 @@ export function exampleCal(): Calendar {
     cal.addEvent(new CalendarEvent(
         "test event 2",
         "event to make sure this thing works",
-        "Dose",
+        EventType.Dose,
         new Date("October 22, 2022, 09:00:00"),
         new Date("October 22, 2022, 10:00:00"),
     ));
@@ -122,14 +126,14 @@ export function exampleCal(): Calendar {
     cal.addEvent(new CalendarEvent(
         "test event 3",
         "all day events?",
-        "Appointment",
+        EventType.Appointment,
         new Date("October 20, 2022"),
     ));
 
     cal.addEvent(new CalendarEvent(
         "test event 4",
         "really long event",
-        "Effect",
+        EventType.Effect,
         new Date("October 21, 2022"),
         new Date("October 22, 2023"),
     ))
