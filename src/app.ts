@@ -22,12 +22,14 @@ app.get('/estimate', (req, res) => {
 
 });
 
+const cal = exampleCal();
+
 app.get('/calendar', (req, res) => {
-    res.render(`calendar`);
+    res.render(`calendar`, {cal: cal});
 });
 
 app.get('/calendar/download', (req, res) => {
-    const cal = exampleCal();
+    //res.send(`thank you for downolading "calendar"`)
     cal.toICal().serve(res);
 });
 

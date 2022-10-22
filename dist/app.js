@@ -20,12 +20,12 @@ app.get('/estimate', (req, res) => {
         //res.sendFile(path.join(__dirname+'/../res/estimate.html'));
     }
 });
+const cal = (0, calendar_1.exampleCal)();
 app.get('/calendar', (req, res) => {
-    res.render(`calendar`);
+    res.render(`calendar`, { cal: cal });
 });
 app.get('/calendar/download', (req, res) => {
-    //res.send("did it work")
-    const cal = (0, calendar_1.exampleCal)();
+    //res.send(`thank you for downolading "calendar"`)
     cal.toICal().serve(res);
 });
 app.listen(port, () => {

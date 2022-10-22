@@ -10,8 +10,30 @@
 </header>
 
 <main>
-    <marquee>test</marquee>
-    <a href="./download">download calendar</a>
+    <br>
+    <a href="/calendar/download">download calendar</a>
+    <br><br>
+    <% let prev; %>
+    <% for (let i = 0; i < cal.events.length; i++) { %>
+        <% if (!prev || !cal.events[i].isSameDay(prev)) { %>
+            <% if (i != 0) { %>
+                </div>
+            <% } %>
+            <div class="calendar-day">
+            <h3><%= cal.events[i].startTime.toDateString()%></h2>
+        <% } %>
+        <% prev = cal.events[i] %>
+        <div class="calendar-event" style="background-color: <%= cal.events[i].toBgColor() %>;">
+            <p><%= cal.events[i].title %></p>
+            <p><%= cal.events[i].description %></p>
+            <% if (cal.events[i].allDay) { %>
+                <p>lasts all day</p>
+            <% } else { %>
+                <p>lasts from <%=cal.events[i].startTime.toLocaleString("en-US", cal.timezone)%> to <%=cal.events[i].endTime.toLocaleString("en-US", cal.timezone)%></p>
+            <% } %>
+        </div>
+    <% } %>
+    </div>
 </main>
 
 <footer>
