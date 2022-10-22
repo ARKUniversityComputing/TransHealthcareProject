@@ -12,4 +12,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
+app.use(express_1.default.static(`res`));
 //# sourceMappingURL=app.js.map
