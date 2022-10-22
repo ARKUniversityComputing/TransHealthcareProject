@@ -1,13 +1,14 @@
 body {
   background-image: url('/pexels-veeterzy-114979.jpg');
   height: 50vh;
-} 
+}
 
 .footer {
-    position : absolute;
+    position : fixed;
     bottom   : 0;
 }
 
 main {
-    height: 130vh;
+    height: auto;
+    padding-bottom: 5vh;
 }
