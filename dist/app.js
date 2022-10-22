@@ -28,7 +28,8 @@ app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.get('/estimate', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     if (req.query.address) {
         const coords = yield geocoder.geocode(req.query.address);
-        res.send((0, estimator_1.estimateCost)(coords[0].latitude, coords[0].longitude, estimator_1.Medication.ESTRADIOL_INJECTIONS));
+        const pharmData = (0, estimator_1.estimateCost)(coords[0].latitude, coords[0].longitude, estimator_1.Medication.ESTRADIOL_INJECTIONS);
+        res.render('pharmacy', { pharmData: pharmData });
     }
     else {
         res.render(`estimate`);

@@ -10,5 +10,41 @@
             "TESTOSTERONE_INJECTIONS": -1
         },
         "url": "https://www.inhousepharmacy.vu/"
+    },
+    {
+        "name": "AllDayChemist",
+        "latitude": 19.0760,
+        "longitude": 72.8777,
+        "prices": {
+            "ESTRADIOL_INJECTIONS": -1,
+            "PROGESTERONE_CAPSULES": 0.5,
+            "SPIRO": 2.10,
+            "TESTOSTERONE_INJECTIONS": -1
+        },
+        "url": "https://www.alldaychemist.com/"
+    },
+    {
+        "name": "RXAisle",
+        "latitude": 39.9334,
+        "longitude": 32.8597,
+        "prices": {
+            "ESTRADIOL_INJECTIONS": -1,
+            "PROGESTERONE_CAPSULES": 0.5,
+            "SPIRO": 3.10,
+            "TESTOSTERONE_INJECTIONS": 29.00
+        },
+        "url": "https://rxaisle.com/"
+    },
+    {
+        "name": "Japan Health",
+        "latitude": 35.6762,
+        "longitude": 139.6503,
+        "prices": {
+            "ESTRADIOL_INJECTIONS": 99.00,
+            "PROGESTERONE_CAPSULES": -1,
+            "SPIRO": 3.60,
+            "TESTOSTERONE_INJECTIONS": 16.72
+        },
+        "url": "https://bio-japan.net/"
     }
 ]

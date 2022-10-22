@@ -19,8 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.get('/estimate', async (req, res) => {
     if (req.query.address) {
         const coords = await geocoder.geocode(req.query.address);
-        
-        res.send(estimateCost(coords[0].latitude, coords[0].longitude, Medication.ESTRADIOL_INJECTIONS));
+
+        const pharmData = estimateCost(coords[0].latitude, coords[0].longitude, Medication.ESTRADIOL_INJECTIONS);
+
+        res.render('pharmacy', {pharmData: pharmData});
     } else {
         res.render(`estimate`);
     }
