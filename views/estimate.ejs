@@ -9,12 +9,21 @@
   <%- include('./partials/header'); %>
 </header>
 
-<main>
+<main class="bg-light">
     <form action="/estimate" method="GET">
         <div class="form-group">
             <label for="address">Your Address: </label><br>
             <input type="text" id="address" name="address" value="" class="form-control"><br>
+
+            <select id="medication" name="medication" class="form-select" aria-label="Medication Needed:">
+                <option selected>Select Medication</option>
+                <option value="ESTRADIOL_INJECTIONS">Estradiol Injectible</option>
+                <option value="SPIRO">Spironolactone</option>
+                <option value="PROGESTERONE_CAPSULES">Progesterone</option>
+                <option value="TESTOSTERONE_INJECTIONS">Testosterone Injectible</option>
+              </select>
         </div>
+        
         <input type="submit" value="Check Pharmacies" class="btn btn-primary">
       </form> 
 </main>
