@@ -2,8 +2,15 @@ import express from 'express';
 import {estimateCost, Medication} from './cost_estimation/estimator';
 import path from 'path';
 import bodyParser from 'body-parser'
+import NodeGeocoder from 'node-geocoder';
 import {exampleCal} from './calendar/calendar';
 
+
+const geocoderOptions = {
+    provider: 'google',
+    apiKey: 'AIzaSyA0caYqmHfBYnEERq4GzumQSmFeU88YB6E'
+  };
+const geocoder = NodeGeocoder(geocoderOptions);
 const app = express();
 const port = 3000;
 
@@ -11,13 +18,13 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/estimate', (req, res) => {
-    //console.log(req.query);
-    if (req.query.latitude && req.query.longitude) {
-        res.send(`test test`);
+app.get('/estimate', async (req, res) => {
+    if (req.query.address) {
+        const coords = await geocoder.geocode(req.query.address);
+
+        res.send(estimateCost(coords[0].latitude, coords[0].longitude, Medication.ESTRADIOL_INJECTIONS));
     } else {
         res.render(`estimate`);
-        //res.sendFile(path.join(__dirname+'/../res/estimate.html'));
     }
 
 });
