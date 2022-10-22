@@ -16,6 +16,7 @@ const express_1 = __importDefault(require("express"));
 const estimator_1 = require("./cost_estimation/estimator");
 const body_parser_1 = __importDefault(require("body-parser"));
 const node_geocoder_1 = __importDefault(require("node-geocoder"));
+const calendar_1 = require("./calendar/calendar");
 const geocoderOptions = {
     provider: 'google',
     apiKey: 'AIzaSyA0caYqmHfBYnEERq4GzumQSmFeU88YB6E'
@@ -34,8 +35,17 @@ app.get('/estimate', (req, res) => __awaiter(void 0, void 0, void 0, function* (
         res.render(`estimate`);
     }
 }));
+const cal = (0, calendar_1.exampleCal)();
+app.get('/calendar', (req, res) => {
+    res.render(`calendar`, { cal: cal });
+});
+app.get('/calendar/download', (req, res) => {
+    //res.send(`thank you for downolading "calendar"`)
+    cal.toICal().serve(res);
+});
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
 app.use(express_1.default.static(`static`));
+console.log();
 //# sourceMappingURL=app.js.map
