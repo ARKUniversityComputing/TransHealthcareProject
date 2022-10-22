@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <form action="/calendar" method="GET">
+        <div class="form-group">
+            <label for="startDate">HRT Start Date: </label><br>
+            <input type="date" id="startDate" name="startDate" class="form-control"><br>
+        </div>
+        <input type="submit" value="calculate rough schedule" class="btn-primary">
+    </form>
+</main>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>
