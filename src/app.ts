@@ -21,6 +21,10 @@ app.get('/estimate', (req, res) => {
 
 });
 
+app.get('/calendar', (req, res) => {
+    res.render(`calendar`);
+});
+
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });
