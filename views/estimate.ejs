@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <form action="/estimate" method="GET">
+        <label for="latitude">Latitude</label><br>
+        <input type="text" id="latitude" name="latitude" value=""><br>
+        <label for="longitude">Longitude</label><br>
+        <input type="text" id="longitude" name="longitude" value=""><br><br>
+        <input type="submit" value="Submit">
+      </form> 
+</main>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>
