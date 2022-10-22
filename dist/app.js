@@ -4,17 +4,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const estimator_1 = require("./cost_estimation/estimator");
-const path_1 = __importDefault(require("path"));
+const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 const port = 3000;
+app.set('view engine', 'ejs');
+app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.get('/estimate', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname + '/../res/estimate.html'));
-});
-app.post('/estimate_result', (req, res) => {
-    let latitude = req.body.latitude;
-    let longitude = req.body.longitude;
-    res.send((0, estimator_1.estimateCost)(40.448819, -79.953920, estimator_1.Medication.SPIRO));
+    //console.log(req.query);
+    if (req.query.latitude && req.query.longitude) {
+        res.send(`test test`);
+    }
+    else {
+        res.render(`estimate`);
+        //res.sendFile(path.join(__dirname+'/../res/estimate.html'));
+    }
 });
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);

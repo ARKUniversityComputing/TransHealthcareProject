@@ -1,21 +1,24 @@
 import express from 'express';
 import {estimateCost, Medication} from './cost_estimation/estimator';
 import path from 'path';
+import bodyParser from 'body-parser'
 
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: false }))
+
 app.get('/estimate', (req, res) => {
-    res.sendFile(path.join(__dirname+'/../res/estimate.html'));
-});
+    //console.log(req.query);
+    if (req.query.latitude && req.query.longitude) {
+        res.send(`test test`);
+    } else {
+        res.render(`estimate`);
+        //res.sendFile(path.join(__dirname+'/../res/estimate.html'));
+    }
 
-app.post('/estimate_result', (req, res) => {
-    let latitude = req.body.latitude;
-    let longitude = req.body.longitude;
-
-    
-
-    res.send(estimateCost(40.448819, -79.953920, Medication.SPIRO));
 });
 
 app.listen(port, () => {
