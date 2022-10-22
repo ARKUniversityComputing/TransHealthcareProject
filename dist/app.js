@@ -36,13 +36,23 @@ app.get('/estimate', (req, res) => __awaiter(void 0, void 0, void 0, function* (
         res.render(`estimate`);
     }
 }));
-const cal = (0, calendar_1.exampleCal)();
 app.get('/calendar', (req, res) => {
-    res.render(`calendar`, { cal: cal });
+    if (req.query.startDate && req.query.hrtType) {
+        const cal = (0, calendar_1.genCalendar)(req.query.startDate, req.query.hrtType);
+        res.render(`calendar`, { cal: cal, startDate: req.query.startDate, hrtType: req.query.hrtType });
+    }
+    else {
+        res.render(`calendargen`);
+    }
 });
 app.get('/calendar/download', (req, res) => {
-    //res.send(`thank you for downolading "calendar"`)
-    cal.toICal().serve(res);
+    if (req.query.startDate && req.query.hrtType) {
+        const cal = (0, calendar_1.genCalendar)(req.query.startDate, req.query.hrtType);
+        cal.toICal().serve(res);
+    }
+    else {
+        res.send("no start date provided, can't generate calendar :(");
+    }
 });
 app.get('/', (req, res) => {
     res.render('home');

@@ -1,0 +1,150 @@
+{
+    "feminizing" : {
+        "effects" : [
+            {
+                "title": "Redistribution of Body Fat",
+                "summary": "Beginning between months 3 and 6 of therapy, you may experience a redistribution of body fat to different areas of your body, e.g. your breasts, with a maximum effect often seen in 2-3 years.",
+                "start": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Decrease in muscle mass and strength",
+                "summary": "Beginning between months 3 and 6 of therapy, you may experience a decrease in your muscle mass and/or strength, with a maximum effect often seen in 1-2 years.",
+                "start": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Softening of skin/decreased oiliness",
+                "summary": "Beginning between months 3 and 6 of therapy, you may start to see your skin soften and become less oily.",
+                "start": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Decreased sexual desire",
+                "summary": "Beginning between months 1 and 3 of therapy, you may start to experience a decrease in your sexual desire or arousability, but this will usually won't increase past months 3 and 6 of your treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Decrease in spontaneous erections",
+                "summary": "Beginning between months 1 and 3 of therapy, you may start to experience a decrease in the amount of spontaneous erections that occur, this decrease will begin to stay the same between months 3 and 6 of your treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Breast Tissue Growth",
+                "summary": "Usually beginning between months 3 and 6 of your treatment, you may see the enlargement of your breasts, this usually continues until you enter years 2 and 3 of your treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Decreased Body Hair Growth",
+                "summary": "Usually starting with the sixth month of your treatment, you may see a decrease in the growth of the hair around your body, this decrease in growth will begin to level out between months 3 and 6 of your treatment. Often, for full hair removal you may need electrolysis or laser hair removal.",
+                "start": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                },
+                "end": {
+                    "years": 1,
+                    "months": 0,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Decreased testicular volume",
+                "summary": "You may notice your testicles have decreased in volume, this is perfectly normal! Often this will be seen between months 3 and 6 of your treatment, and will often stop happening around years 2 and 3.",
+                "start": {
+                    "years": 0,
+                    "months": 3,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            }
+        ]
+    },
+    "masculinizing" : {
+        "effects" : [
+            {
+                "title": "Skin oiliness/acne",
+                "summary": "Beginning within six months of treatment, you may notice oilier skin and acne, this may increase up until years 1 or 2 of treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Facial/body hair growth",
+                "summary": "Beginning within six months of treatment, you may notice oilier skin and acne, this may increase up until years 1 or 2 of treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                },
+                "end": {
+                    "years": 1,
+                    "months": 0,
+                    "days": 0
+                }
+            }
+        ]
+    }
+}

@@ -9,9 +9,9 @@
   <%- include('./partials/header'); %>
 </header>
 
-<main>
+<main class="bg-light"">
     <br>
-    <a href="/calendar/download">download calendar</a>
+    <a href="/calendar/download?startDate=<%=startDate%>&hrtType=<%=hrtType%>">download calendar</a>
     <br><br>
     <% let prev; %>
     <% for (let i = 0; i < cal.events.length; i++) { %>
@@ -29,7 +29,7 @@
             <% if (cal.events[i].allDay) { %>
                 <p>lasts all day</p>
             <% } else { %>
-                <p>lasts from <%=cal.events[i].startTime.toLocaleString("en-US", cal.timezone)%> to <%=cal.events[i].endTime.toLocaleString("en-US", cal.timezone)%></p>
+                <p>onset likely between <%=cal.events[i].startTime.toDateString()%> and <%=cal.events[i].endTime.toDateString()%></p>
             <% } %>
         </div>
     <% } %>
