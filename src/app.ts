@@ -31,15 +31,22 @@ app.get('/estimate', async (req, res) => {
 
 });
 
-const cal = exampleCal();
-
 app.get('/calendar', (req, res) => {
-    res.render(`calendar`, {cal: cal});
+    if (req.query.startDate) {
+        const cal = exampleCal();
+        res.render(`calendar`, {cal: cal, startDate: req.query.startDate});
+    } else {
+        res.render(`calendargen`);
+    }
 });
 
 app.get('/calendar/download', (req, res) => {
-    //res.send(`thank you for downolading "calendar"`)
-    cal.toICal().serve(res);
+    if (req.query.startDate) {
+        const cal = exampleCal();
+        cal.toICal().serve(res);
+    } else {
+        res.send("no start date provided, can't generate calendar :(")
+    }
 });
 
 app.get('/',  (req, res) => {

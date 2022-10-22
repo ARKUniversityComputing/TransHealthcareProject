@@ -41,24 +41,24 @@ export class CalendarEvent {
 
     isSameDay(other: CalendarEvent): boolean {
         return this.startTime.getFullYear() === other.startTime.getFullYear() &&
-               this.startTime.getMonth() === other.startTime.getMonth() &&
-               this.startTime.getDate() === other.startTime.getDate();
+            this.startTime.getMonth() === other.startTime.getMonth() &&
+            this.startTime.getDate() === other.startTime.getDate();
     }
 
     toBgColor(): string {
         let color;
         switch (this.type) {
             case EventType.Effect:
-                color = "#87e89c"
+                color = "#87e89c";
                 break;
             case EventType.Dose:
-                color = "#5da5d9"
+                color = "#5da5d9";
                 break;
             case EventType.Appointment:
-                color = "#a494eb"
+                color = "#a494eb";
                 break;
             default:
-                color = "#ff00ff"
+                color = "#ff00ff";
         }
         return color;
     }
@@ -72,7 +72,7 @@ export class Calendar {
     timezone: string;
     constructor(timezone?: string) {
         this.events = [];
-        this.timezone ??= "America/New_York" // fine for testing and stuff
+        this.timezone ??= "America/New_York"; // fine for testing and stuff
     }
 
     addEvent(event: CalendarEvent) {
@@ -92,7 +92,7 @@ export class Calendar {
      * call .serve(res) to send over http
      */
     toICal(): ICalCalendar {
-        let cal = new ICalCalendar({ name: "HRT Events", timezone: this.timezone}); // maybe change this?
+        let cal = new ICalCalendar({ name: "HRT Events", timezone: this.timezone }); // maybe change this?
         for (let ev of this.events) {
             cal.createEvent(ev.toICalData());
         }
@@ -101,7 +101,7 @@ export class Calendar {
 }
 
 function dateToTimezone(date: Date, timeZoneName: string): Date {
-    return new Date(date.toLocaleString("en-US", {timeZone: timeZoneName}));
+    return new Date(date.toLocaleString("en-US", { timeZone: timeZoneName }));
 }
 
 export function exampleCal(): Calendar {
@@ -136,7 +136,7 @@ export function exampleCal(): Calendar {
         EventType.Effect,
         new Date("October 21, 2022"),
         new Date("October 22, 2023"),
-    ))
+    ));
 
     return cal;
 }
