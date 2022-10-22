@@ -95,7 +95,6 @@ class Calendar {
 exports.Calendar = Calendar;
 function genCalendar(date, type) {
     let startDate = new Date(date);
-    console.log(startDate.toString());
     let cal = new Calendar();
     let rawEffectData = fs_1.default.readFileSync("res/effectonset.json");
     let effectData = JSON.parse(rawEffectData.toString());
@@ -105,12 +104,10 @@ function genCalendar(date, type) {
         onsetStart.setFullYear(onsetStart.getFullYear() + effect.start.years);
         onsetStart.setMonth(onsetStart.getMonth() + effect.start.months);
         onsetStart.setDate(onsetStart.getDate() + effect.start.days);
-        console.log(onsetStart.toString());
         let onsetEnd = new Date(startDate.getTime());
         onsetEnd.setFullYear(onsetEnd.getFullYear() + effect.end.years);
         onsetEnd.setMonth(onsetEnd.getMonth() + effect.end.months);
         onsetEnd.setDate(onsetEnd.getDate() + effect.end.days);
-        console.log(onsetEnd.toString());
         cal.addEvent(new CalendarEvent(effect.title, effect.summary, EventType.Effect, onsetStart, onsetEnd));
     }
     return cal;
