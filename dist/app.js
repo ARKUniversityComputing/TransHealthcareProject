@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const calendar_1 = require("./calendar/calendar");
 const app = (0, express_1.default)();
 const port = 3000;
 app.set('view engine', 'ejs');
@@ -21,6 +22,11 @@ app.get('/estimate', (req, res) => {
 });
 app.get('/calendar', (req, res) => {
     res.render(`calendar`);
+});
+app.get('/calendar/download', (req, res) => {
+    //res.send("did it work")
+    const cal = (0, calendar_1.exampleCal)();
+    cal.toICal().serve(res);
 });
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);

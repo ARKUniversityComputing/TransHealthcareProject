@@ -2,6 +2,7 @@ import express from 'express';
 import {estimateCost, Medication} from './cost_estimation/estimator';
 import path from 'path';
 import bodyParser from 'body-parser'
+import {exampleCal} from './calendar/calendar';
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,11 @@ app.get('/estimate', (req, res) => {
 
 app.get('/calendar', (req, res) => {
     res.render(`calendar`);
+});
+
+app.get('/calendar/download', (req, res) => {
+    const cal = exampleCal();
+    cal.toICal().serve(res);
 });
 
 app.listen(port, () => {

@@ -7,7 +7,7 @@ type EventType = "Effect" | "Appointment" | "Dose";
  * class for storing information about calendar events, with fields not included in the ical format,
  * time stored in UTC
  */
-class CalendarEvent {
+export class CalendarEvent {
     title: string;
     description: string;
     type: EventType;
@@ -36,7 +36,7 @@ class CalendarEvent {
 /**
  * Class to manage calendar stuff more easily
  */
-class Calendar {
+export class Calendar {
     events: CalendarEvent[];
     constructor() {
         this.events = [];
@@ -56,4 +56,18 @@ class Calendar {
         }
         return cal;
     }
+}
+
+export function exampleCal(): Calendar {
+    let cal = new Calendar();
+
+    cal.addEvent(new CalendarEvent(
+        "test event",
+        "event to make sure this thing works",
+        "Appointment",
+        new Date("October 22, 2022, 09:00:00"),
+        new Date("October 22, 2022, 10:00:00"),
+    ));
+
+    return cal;
 }
