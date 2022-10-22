@@ -9,8 +9,20 @@
   <%- include('./partials/header'); %>
 </header>
 
+<style>
+    .center {
+      margin: auto;
+      padding: 10px;
+      
+    }
+</style>
+
 <main>
-    <p>The cheapest pharmacy is: <%= pharmData.data.name %></p>
+    <div class="text-center">
+        <br>
+        <a class="btn btn-info" role="button" href="<%= pharmData.data.url%>">The cheapest pharmacy is <%= pharmData.data.name %>!</a>
+        <br>
+    </div>
 </main>
 
 <footer>

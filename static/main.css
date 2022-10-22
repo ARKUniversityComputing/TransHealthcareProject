@@ -1,13 +1,9 @@
 body {
-    background-color: lightblue;
-  }
-  
-  h1 {
-    color: white;
-    text-align: center;
-  }
-  
-  p {
-    font-family: verdana;
-    font-size: 20px;
-  }
+  background-image: url('/pexels-veeterzy-114979.jpg');
+  height: 50vh;
+} 
+
+.footer {
+    position : absolute;
+    bottom   : 0;
+}

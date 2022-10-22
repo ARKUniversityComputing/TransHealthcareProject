@@ -19,6 +19,7 @@ function estimateCost(latitude, longitude, med) {
     let costs = {};
     for (let pharmacyDataI in pharmacies) {
         let pharmacyData = pharmacies[pharmacyDataI];
+        console.log(pharmacyData);
         if (pharmacyData.prices[med] < 0) {
             continue;
         }
