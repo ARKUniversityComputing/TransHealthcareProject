@@ -1,0 +1,19 @@
+{
+  "name": "transhealthcareproject",
+  "version": "1.0.0",
+  "description": "Project for the 2022 Pitt Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ARKUniversityComputing/TransHealthcareProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ARKUniversityComputing/TransHealthcareProject/issues"
+  },
+  "homepage": "https://github.com/ARKUniversityComputing/TransHealthcareProject#readme"
+}
