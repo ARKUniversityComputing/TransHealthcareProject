@@ -42,6 +42,10 @@ app.get('/calendar/download', (req, res) => {
     cal.toICal().serve(res);
 });
 
+app.get('/',  (req, res) => {
+    res.render('home');
+});
+
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });
