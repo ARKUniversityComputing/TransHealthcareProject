@@ -12,6 +12,6 @@ app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
 });
 
-app.use(express.static(`res`));
+app.use(express.static(`static`));
 
 console.log(estimateCost(40.448819, -79.953920, Medication.SPIRO));
