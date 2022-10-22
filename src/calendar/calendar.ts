@@ -1,10 +1,11 @@
 import { ICalCalendar, ICalEventData } from "ical-generator";
+import fs from "fs";
 
 // in case we want to add filtering, add more if necessary
 enum EventType {
     Appointment = "Appointment",
     Dose = "Dose",
-    Effect = "Effect",
+    Effect = "Possible Effect Onset Period",
 };
 
 /**
@@ -100,8 +101,36 @@ export class Calendar {
     }
 }
 
-function dateToTimezone(date: Date, timeZoneName: string): Date {
-    return new Date(date.toLocaleString("en-US", { timeZone: timeZoneName }));
+export function genCalendar(date: string, type: "fem" | "masc"): Calendar {
+    let startDate = new Date(date);
+    let cal = new Calendar();
+
+    let rawEffectData = fs.readFileSync("res/effectonset.json");
+    let effectData = JSON.parse(rawEffectData.toString());
+    let effects = type === "fem" ? effectData.feminizing.effects : effectData.masculinizing.effects;
+
+    for (const effect of effects) {
+        let onsetStart = new Date(startDate.getTime());
+        onsetStart.setFullYear(onsetStart.getFullYear() + effect.start.years)
+        onsetStart.setMonth(onsetStart.getMonth() + effect.start.months)
+        onsetStart.setDate(onsetStart.getDate() + effect.start.days);
+
+        let onsetEnd = new Date(startDate.getTime());
+        onsetEnd.setFullYear(onsetEnd.getFullYear() + effect.end.years)
+        onsetEnd.setMonth(onsetEnd.getMonth() + effect.end.months)
+        onsetEnd.setDate(onsetEnd.getDate() + effect.end.days);
+
+        cal.addEvent(new CalendarEvent(
+            effect.title,
+            effect.summary,
+            EventType.Effect,
+            onsetStart,
+            onsetEnd,
+        ));
+    }
+
+
+    return cal;
 }
 
 export function exampleCal(): Calendar {

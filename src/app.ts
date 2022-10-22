@@ -3,7 +3,7 @@ import {estimateCost, Medication} from './cost_estimation/estimator';
 import path from 'path';
 import bodyParser from 'body-parser'
 import NodeGeocoder from 'node-geocoder';
-import {exampleCal} from './calendar/calendar';
+import {exampleCal, genCalendar} from './calendar/calendar';
 
 
 const geocoderOptions = {
@@ -32,17 +32,17 @@ app.get('/estimate', async (req, res) => {
 });
 
 app.get('/calendar', (req, res) => {
-    if (req.query.startDate) {
-        const cal = exampleCal();
-        res.render(`calendar`, {cal: cal, startDate: req.query.startDate});
+    if (req.query.startDate && req.query.hrtType) {
+        const cal = genCalendar(req.query.startDate, req.query.hrtType);
+        res.render(`calendar`, {cal: cal, startDate: req.query.startDate, hrtType: req.query.hrtType});
     } else {
         res.render(`calendargen`);
     }
 });
 
 app.get('/calendar/download', (req, res) => {
-    if (req.query.startDate) {
-        const cal = exampleCal();
+    if (req.query.startDate && req.query.hrtType) {
+        const cal = genCalendar(req.query.startDate, req.query.hrtType);
         cal.toICal().serve(res);
     } else {
         res.send("no start date provided, can't generate calendar :(")

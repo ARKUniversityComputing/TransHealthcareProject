@@ -1,0 +1,38 @@
+{
+    "feminizing" : {
+        "effects" : [
+            {
+                "title": "test effect uwu",
+                "summary": "all of your bones EXPLODE, max effect 2-3 years",
+                "start": {
+                    "years": 0,
+                    "months": 0,
+                    "days": 1
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 1
+                }
+            }
+        ]
+    },
+    "masculinizing" : {
+        "effects" : [
+            {
+                "title": "test effect owo",
+                "summary": "all of your bones IMPLODE, max effect 2-3 years",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 1,
+                    "months": 1,
+                    "days": 0
+                }
+            }
+        ]
+    }
+}
