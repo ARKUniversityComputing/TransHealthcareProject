@@ -133,7 +133,91 @@
             },
             {
                 "title": "Facial/body hair growth",
-                "summary": "Beginning within six months of treatment, you may notice oilier skin and acne, this may increase up until years 1 or 2 of treatment.",
+                "summary": "Usually between months 6 and 12 of treatment you will begin seeing an increase in body hair and/or facial hair. This will often continue to increase until years four or five of your treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                },
+                "end": {
+                    "years": 1,
+                    "months": 0,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Scalp hair loss",
+                "summary": "You may start to notice loss of scalp hair between months 6 and 12 of treatment but this can often be prevented and treated with other medications.",
+                "start": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                },
+                "end": {
+                    "years": 1,
+                    "months": 0,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Increased muscle mass/strength",
+                "summary": "Between months 6 and 12 of treatment, your muscle mass and strength may start to increase. This increase will often continue until anytime between years 2 and 5 of your treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                },
+                "end": {
+                    "years": 1,
+                    "months": 0,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Fat redistribution",
+                "summary": "Between months 1 and 6 of treatment you may begin to see fat in different places, this is your body redistributing it! This will often continue until years two or five of your treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Cessation of menses",
+                "summary": "Between months 1 and 6, you may start to notice less bleeding during your menstrual cycles, it may stop all together! If you experience abnormally heavy bleeding, it is recommended you contact a gynecologist.",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Clitoral enlargement",
+                "summary": "Between months 1 and 6, you may start to notice your clitoris getting larger, this is perfectly normal! The clitoris will often continue getting larger until 1 or 2 years from the beginning of treatment.",
+                "start": {
+                    "years": 0,
+                    "months": 1,
+                    "days": 0
+                },
+                "end": {
+                    "years": 0,
+                    "months": 6,
+                    "days": 0
+                }
+            },
+            {
+                "title": "Deepening of Voice",
+                "summary": "Between months 6 and 12, you may start to notice your voice getting deeper, this usually continues until 1 - 2 years of treatment.",
                 "start": {
                     "years": 0,
                     "months": 6,
