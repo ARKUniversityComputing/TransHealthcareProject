@@ -11,9 +11,7 @@ import fs from 'fs';
 export function estimateCost(latitude: number, longitude: number, med: Medication) {
     let rawdata = fs.readFileSync('res/pharmacies.json');
     let pharmacies: object = JSON.parse(rawdata.toString());
-
-    console.log(med);
-
+    
     let costs: {[key: string]: number} = {};
 
     for (let pharmacyDataI in pharmacies) {
@@ -42,7 +40,7 @@ export function estimateCost(latitude: number, longitude: number, med: Medicatio
     for (let pharmacyDataI in pharmacies) {
         let pharmacyData = pharmacies[pharmacyDataI];
         if (pharmacyData.name == cheapestPharmacy) {
-            return {data: pharmacyData, cost: smallestCost};
+            return {data: pharmacyData, cost: smallestCost.toFixed(2)};
         }
     }
 }
